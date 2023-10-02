@@ -1,5 +1,5 @@
 <template>
-  <h2 v-if="post"> {{post.title}}</h2>
+  <h2 v-if="post"> {{post[0].title}}</h2>
 </template>
 <script>
 export default{
