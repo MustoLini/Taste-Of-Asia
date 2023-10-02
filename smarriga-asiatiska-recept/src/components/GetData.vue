@@ -8,12 +8,12 @@ export default{
       post: null
     };
   },
-  created() {
-    this.getPosts();
+  async created() {
+    await this.getPosts();
   },
   methods:{
-    getPosts(){
-      fetch('https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes')
+    async getPosts(){
+      await fetch('https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes')
           .then(response => response.json())
           .then(data=>{
             this.post=data
