@@ -1,5 +1,5 @@
 <template>
-  <h2 v-if="post"> {{post[0].title}}</h2>
+  <h2 v-for="singlePost in post" :key="singlePost.id"> {{singlePost.title}}</h2>
 </template>
 <script>
 export default{
