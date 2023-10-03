@@ -4,14 +4,18 @@
     <p> {{singlePost.description}}</p>
     <p> {{singlePost.timeInMins}}</p>
     <p>{{singlePost.ingredients.length}}</p>
+    <img :src="url + trans + post.imageUrl">
+    <p {{specifcPost.title }}></p>
   </div>
 
 </template>
 <script>
+const baseURL = "https://jau22-recept-grupp4-xzvarhmra742.reky.se";
 export default {
   data() {
     return {
-      post: null
+      post: null,
+      specifcPost: null
     };
   },
   async created() {
@@ -19,13 +23,25 @@ export default {
   },
   methods: {
     async getPosts() {
-      await fetch('https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes')
+      await fetch(`${baseURL}/recipes`)
           .then(response => response.json())
           .then(data => {
             this.post = data
             console.log(data)
           })
+    },
+
+  async getPostsById(){
+    const id = this.$refs.get_id.value;
+    if (id){
+      await fetch(`${baseURL}/recipes/${id}`)
+      .then(response => response.json())
+      .then(data=> {
+        this.specifcPost = data
+        console.log(data);
+      })
     }
+  }
   }
 }
 </script>
