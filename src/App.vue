@@ -1,5 +1,6 @@
 <template>
-  <div>
+  
+  <div class="card-container">
       <get-data></get-data>
   </div>
 </template>
