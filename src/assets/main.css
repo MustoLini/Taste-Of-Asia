@@ -1,22 +1,41 @@
 @import './base.css';
-
+#app {
+  box-sizing: border-box;
+  display: grid;
+  gap: 10px;
+}
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
 #recipeBox{
-  margin-top: 2rem;
-  color: green;
+
+  display: flex;
+  flex-direction:column;
+    
+    max-width: 300px;
+    background-color: #fff;        
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+#recipeBox h2{
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
   text-align: center;
-  margin-left: 38rem;
-  margin-right: 38rem;
-  width: 300px;
-  height: 200px;
-  background-color: lightgray;
-  padding: 1rem;
-  box-sizing: border-box;
-  border: 2px solid gray;
-  border: 2px solid red;
-  box-sizing: border-box;
-  padding: 1rem;
-  text-align: center;
-  color: green;
+}
+#recipeBox p{
+  padding: 15px; 
+  color: black;
+}
+#recipeBox img{
+  max-width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 #app {
@@ -40,15 +59,15 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+  /*@media (min-width: 1024px) {
   body {
     display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  
+  }*/
+@media (min-width: 768px){
+  #app{
+    grid-template-columns: 1fr;
   }
 }
+
+
