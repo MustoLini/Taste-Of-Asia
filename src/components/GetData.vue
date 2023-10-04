@@ -1,14 +1,14 @@
 <template>
-  <div id="recipeBox" v-for="singlePost in post" :key="singlePost.id">
-    <h2> {{ singlePost.title }}</h2>
-    <p> {{singlePost.description}}</p>
-    <p> {{singlePost.timeInMins}}</p>
-    <p>{{singlePost.ingredients.length}}</p>
+  <div id="recipeBox">
+      <RecipePost v-for="singlePost in post" :key="singlePost.id" :post="singlePost"></RecipePost >
   </div>
 
 </template>
 <script>
+import RecipePost from "@/components/RecipePost.vue";
+
 export default {
+  components: {RecipePost},
   data() {
     return {
       post: null
