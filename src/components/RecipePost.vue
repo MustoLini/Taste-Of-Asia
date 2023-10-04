@@ -4,6 +4,9 @@
     <p> {{post.description}}</p>
     <p> {{post.timeInMins}}</p>
     <p>{{post.ingredients.length}}</p>
+    <router-link to="'/recipe/' + post.id">
+      <button>Go to Recipe</button>
+    </router-link>
   </div>
 </template>
 
