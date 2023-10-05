@@ -8,12 +8,12 @@ html {
 
 /* Define styles for the container of your posts */
 #recipeBox {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap onto the next row */
-  justify-content: space-between; /* Distribute items evenly on large screens */
+  /* Distribute items evenly on large screens */
   gap: 10px;
   margin: 0 auto;
-  max-width: 1280px;
   padding: 2rem;
   font-weight: normal;
 }
