@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import RecipePost from '@/components/RecipePost.vue';
 import GetData from '@/components/GetData.vue';
 
+
 const routes = [
     {
         path: '/',
