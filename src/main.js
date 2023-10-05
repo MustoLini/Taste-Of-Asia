@@ -1,9 +1,6 @@
-// main.js
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router'; // Import your router configuration
+import './assets/main.css'
+console.log("Running main")
+import { createApp } from 'vue'
+import App from './App.vue'
 
-const app = createApp(App);
-app.use(router); // Use Vue Router
-
-app.mount('#app');
+createApp(App).mount('#app')

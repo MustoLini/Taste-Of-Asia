@@ -1,8 +1,6 @@
 <template>
   <div id="recipeBox">
-    <router-link v-for="singlePost in post" :key="singlePost.id" to="'/recipe/'+ singlePost.id">
-      <RecipePost :post="singlePost"></RecipePost >
-    </router-link>
+      <RecipePost v-for="singlePost in post" :key="singlePost.id" :post="singlePost"></RecipePost >
   </div>
 
 </template>
