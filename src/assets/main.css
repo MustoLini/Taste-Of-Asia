@@ -1,73 +1,59 @@
 @import './base.css';
-#app {
-  box-sizing: border-box;
-  display: grid;
-  gap: 10px;
+/* Reset some default styles for consistency */
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
-.card-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
-}
-#recipeBox{
 
+/* Define styles for the container of your posts */
+#recipeBox {
+  box-sizing: border-box;
   display: flex;
-  flex-direction:column;
-    
-    max-width: 300px;
-    background-color: #fff;        
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
+  /* Distribute items evenly on large screens */
+  gap: 10px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
 }
-#recipeBox h2{
+
+/* Define styles for each individual post */
+.recipe-post {
+  flex: 1; /* Make each post equally occupy the available space */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 5px;
+}
+
+.recipe-post h2 {
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0;
   color: #000;
   text-align: center;
 }
-#recipeBox p{
-  padding: 15px; 
+
+.recipe-post p {
+  padding: 15px;
   color: black;
 }
-#recipeBox img{
+
+.recipe-post img {
   max-width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+/* Media query for small screens */
+@media (max-width: 768px) {
+  #recipeBox {
+    flex-direction: column; /* Stack items vertically on small screens */
   }
 }
 
-  /*@media (min-width: 1024px) {
-  body {
-    display: flex;
-  
-  }*/
-@media (min-width: 768px){
-  #app{
-    grid-template-columns: 1fr;
-  }
-}
 
 
