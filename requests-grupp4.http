@@ -1,0 +1,518 @@
+# Ändra localhost:4000 till er grupps basurl som ni fått.
+@baseUrl=https://jau22-recept-grupp4-xzvarhmra742.reky.se
+
+# Hämtar alla recept
+GET {{baseUrl}}/recipes HTTP/1.1
+
+###
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Beef Yakiniku",
+  "description": "Beef yakiniku är ett välsmakande asieninspirerat recept där ingredienser som sambal oelek, riven ingefära och soja står för smakerna. Köttet bryns i en het panna innan det blandas med såsen. Till servering finns nudlar, krispiga grönsaker och syrliga limeklyftor där till sist hackad gräslök strösslas över.",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 30,
+  "categories": [
+    "Japansk"
+  ],
+  "instructions": [
+    "Sås: Skala och riv vitlök och ingefära. Blanda alla ingredienser till såsen i en kastrull. Koka såsen ett par minuter under omrörning. ",
+    "Grönsaker: Ansa och strimla pak choi och skiva rädisor. Skölj limen och riv det yttersta av skalet. Dela limen och pressa saften ur halva. Blanda skal och saft med grönsakerna och oljan. Smaka av med salt och peppar. ",
+    "Skär den andra halvan av limen i klyftor. ",
+    "Kött: Bryn köttet i omgångar i oljan i en het stekpanna. Häll på såsen och koka någon minut. ",
+    "Tillbehör: Hacka gräslöken fint. Koka nudlarna enligt anvisningen på förpackningen. ",
+    "Servera köttet med nudlar, grönsaker och limeklyftor. Strö över gräslöken. "
+  ],
+  "ingredients": [
+    {
+      "name": "Vitlöksklyfta",
+      "amount": 2,
+      "unit": "Klyfta"
+    },
+    {
+      "name": "Ingefära",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Japanask Soja",
+      "amount": 1,
+      "unit": "dl"
+    },
+    {
+      "name": "Vatten",
+      "amount": 1,
+      "unit": "dl"
+    },
+    {
+      "name": "Strösocker",
+      "amount": 1,
+      "unit": "dl"
+    },
+    {
+      "name": "Sambal Oelek",
+      "amount": 1,
+      "unit": "tsk"
+    },
+    {
+      "name": "Strimlad Ryggbiff",
+      "amount": 500,
+      "unit": "gram"
+    },
+    {
+      "name": "Olja",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Kruka gräslök",
+      "amount": 1,
+      "unit": "Kruka"
+    },
+    {
+      "name": "Äggnudlar",
+      "amount": 500,
+      "unit": "gram"
+    }
+  ]
+}
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Sushi California Rolls",
+  "description": "En väldigt rolig och annorlunda form av sushi är California rolls. Här har man vänt på steken och riset har vänts utåt i rullen. En trevlig variation! ",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 15,
+  "categories": [
+    "Japansk"
+  ],
+  "instructions": [
+    "Fördela riset på sjögräsbladet i ett ca 1/2 cm tjockt lager. Strö över sesamfröna. Lägg en bit plastfolie över riset och vänd alltihop upp och ner.  ",
+    "Lägg på en tunn sträng wasabi. Fördela crabsticks, avokado och gurka. Rulla ihop. Skarven behöver inte klistras ihop, riset fungerar som klister.  ",
+    "Skär rullen i 8 bitar med vass kniv. Servera med syltad ingefära, japansk soja och wasabi. "
+  ],
+  "ingredients": [
+    {
+      "name": "Nori",
+      "amount": 1,
+      "unit": "packet"
+    },
+    {
+      "name": "Sushiris",
+      "amount": 2,
+      "unit": "dl"
+    },
+    {
+      "name": "Crabsricks",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Avokado",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Gurka",
+      "amount": 0.25,
+      "unit": "styck"
+    },
+    {
+      "name": "Sesamfrön",
+      "amount": 0.5,
+      "unit": "dl"
+    },
+    {
+      "name": "Syltad Ingefära",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Wasabi",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Japansk soja",
+      "amount": 1,
+      "unit": "styck"
+    }
+  ]
+}
+
+
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Bibimbap med entrecote",
+  "description": "Bimbimbap betyder ”rört ris” med många härligt goda smaker och konsistenser i samma skål som blandas. Äts gärna med sked. Eller med pinnar, om man föredrar det. Gott är det oavsett! ",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 40,
+  "categories": [
+    "Koreanskt"
+  ],
+  "instructions": [
+    "Börja med att blanda marinaden och lägg sedan i köttet. Låt stå medan du gör de andra ingredienserna. Stek sedan köttet i stekpanna på hög värme. ",
+    "Koka riset enligt förpackningens anvisningar och förbered alla namul (marinerade grönsaker). ",
+    "Koka upp minst 2 liter vatten. Lägg spenaten ett durkslag och häll det kokande vattnet över. Skölj sedan med kallt vatten och krama ur ordentligt. Blanda med övriga ingredienser. ",
+    "Lägg böngroddarna i en bunke. Koka upp 2 liter vatten och häll över böngroddarna. Häll genast av och skölj sedan groddarna med iskallt vatten. Låt rinna av väl i durkslag. Blanda groddarna med sesamolja, salt och sesamfrön. ",
+    "Lägg riset i botten på 4 vida, djupa skålar. Lägg sedan alla namul, kimchi och kött var för sig på riset. Avsluta med att lägga ett stekt ägg ovanpå . Servera med gochujang - koreansk chilipaste, som var och en tillsätter efter smak. Rör runt och njut! "
+  ],
+  "ingredients": [
+    {
+      "name": "NöttKött/Entrecote",
+      "amount": 200,
+      "unit": "gram"
+    },
+    {
+      "name": "Japansk Soja",
+      "amount": 2,
+      "unit": "msk"
+    },
+    {
+      "name": "Strösocker",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Sesamolja",
+      "amount": 2,
+      "unit": "tsk"
+    },
+    {
+      "name": "Vitt vin",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Vitlök",
+      "amount": 2,
+      "unit": "klyftor"
+    },
+    {
+      "name": "Purjolök",
+      "amount": 5,
+      "unit": "cm"
+    },
+    {
+      "name": "Koreanskt ris",
+      "amount": 4,
+      "unit": "dl"
+    },
+    {
+      "name": "Rädisor",
+      "amount": 20,
+      "unit": "stycken"
+    },
+    {
+      "name": "Ägg",
+      "amount": 4,
+      "unit": "stycken"
+    },
+    {
+      "name": "Gochujang",
+      "amount": 1,
+      "unit": "stycken"
+    }
+  ]
+}
+
+###
+
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Chilipicklad gurka",
+  "description": "Picklad gurka med chili är en variant av koreansk pressgurka. Det koreanska chilipulvret i originalet har bytts ut mot chiliflakes och paprikapulver. ",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 30,
+  "categories": [
+    "Koreanskt"
+  ],
+  "instructions": [
+    "Blada ättika, socker, salt och koreansk chilipulver. Skiva gurka i tunna skivor, gärna på en mandolin. Blanda med salladslök och den sötsyrliga blandningen. Lägg i en bunke och placera något tungt ovanpå, tex ett litet fat med en stenmortel på. Låt stå 20 minuter i kylen och häll av överflödig vätska innan servering.  "
+
+  ],
+  "ingredients": [
+    {
+      "name": "Gurka",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Salladslökar",
+      "amount": 2,
+      "unit": "styck"
+    },
+    {
+      "name": "Ättika",
+      "amount": 1,
+      "unit": "tsk"
+    },
+    {
+      "name": "Strösocker",
+      "amount": 2,
+      "unit": "tsk"
+    },
+    {
+      "name": "Salt",
+      "amount": 1,
+      "unit": "tsk"
+    },
+    {
+      "name": "Koreanskt Chilipulver",
+      "amount": 2,
+      "unit": "tsk"
+    }
+  ]
+}
+
+###
+
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Vietnamesisk glasnudelsallad med räkor",
+  "description": "Glasnudlar gör sig fantastiskt bra i sallader med smakrik dressing. I det här receptet består dressingen av lime, rörsocker, fisksås, risvinäger och chilipeppar. Låt nudlarna ”marinera” lite i dressingen innan servering för en extra smarrig smakupplevelse. ",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 30,
+  "categories": [
+    "Vietnamesiskt"
+  ],
+  "instructions": [
+    "Tillaga glasnudlarna enligt anvisningarna på förpackningen och klipp dem grovt.",
+    "Rosta sesamfrön i en torr stekpanna, ca 3-4 minuter på medelstark värme under omrörning. ",
+    "Öppna timer: 3 minuter ",
+    "Skala, skölj och strimla morot samt rödlök fint. Skölj och bryt hjärtbladsalladen grovt. ",
+    "Kärna ur och strimla den röda chilipepparn i långa tunna strimlor. ",
+    "Blanda en dressing av olja, fisksås, risvinäger, limejuice och rörsocker. ",
+    "Blanda glasnudlar, räkor och grönsaker med dressingen. Tillsätt hela blad av mynta och koriander. ",
+    "Lägg upp på ett fat och garnera med rostade sesamfrön. "
+  ],
+  "ingredients": [
+    {
+      "name": "Glasnudlar",
+      "amount": 100,
+      "unit": "gram"
+    },
+    {
+      "name": "Sesamfrön",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Morot",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Rödlök",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Hjärtsalladshuvuden",
+      "amount": 2,
+      "unit": "styck"
+    },
+    {
+      "name": "Röd chili",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Olja",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Fisksås",
+      "amount": 2,
+      "unit": "msk"
+    },
+    {
+      "name": "Risvinäger",
+      "amount": 1,
+      "unit": "msk"
+    },
+    {
+      "name": "Lime",
+      "amount": 2,
+      "unit": "styck"
+    },
+    {
+      "name": "Rörsocker",
+      "amount": 2,
+      "unit": "tsk"
+    },
+    {
+      "name": "Räkor",
+      "amount": 300,
+      "unit": "gram"
+    },
+    {
+      "name": "Mynta",
+      "amount": 1,
+      "unit": "kruka"
+    },
+    {
+      "name": "Koriander",
+      "amount": 1,
+      "unit": "kruka"
+    }
+  ]
+}
+
+###
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Vietnamesisk vårrullar med räkor",
+  "description": "Vietnamesiska vårrullar gör du på blötlagda rispapper, bara att rulla ihop och äta direkt. Servera gärna som mingelmat med olika dippsåser.",
+  "ratings": [],
+  "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
+  "timeInMins": 40,
+  "categories": [
+    "Vietnamesiskt"
+  ],
+  "instructions": [
+    "Koka glasnudlarna enligt anvisning på förpackningen. Skölj kallt och låt rinna av. ",
+    "Skala moroten. Skölj purjolöken. Strimla morot, purjolök och gurka.",
+    "Blötlägg rispappersarken ett i taget ca 1 min och lägg på en skärbräda.",
+    "Lägg på glasnudlar, grönsaker, purjolök, räkor och koriander. Rulla ihop till tajta rullar och ställ kallt."
+  ],
+  "ingredients": [
+    {
+      "name": "Glasnudlar",
+      "amount": 50,
+      "unit": "gram"
+    },
+    {
+      "name": "Rispapper",
+      "amount": 12,
+      "unit": "stycken"
+    },
+    {
+      "name": "Morot",
+      "amount": 1,
+      "unit": "styck"
+    },
+    {
+      "name": "Purjolök",
+      "amount": 0.5,
+      "unit": "styck"
+    },
+    {
+      "name": "Gurka",
+      "amount": 0.5,
+      "unit": "styck"
+    },
+    {
+      "name": "Skalade räkor",
+      "amount": 100,
+      "unit": "gram"
+    },
+    {
+      "name": "Hackad färsk koriander",
+      "amount": 2,
+      "unit": "msk"
+    }
+  ]
+}
+
+###
+
+# Söker bland alla recept
+GET {{baseUrl}}/recipes?query=toas HTTP/1.1
+
+###
+
+# Hämtar ett enskilt recept
+GET {{baseUrl}}/recipes/632d9fcb6e7766b37d9837f5 HTTP/1.1
+
+###
+
+# Tar bort ett recept
+DELETE {{baseUrl}}/recipes/632d9fcb6e7766b37d9837f5 HTTP/1.1
+
+###
+
+# Uppdaterar ett recept
+PATCH {{baseUrl}}/recipes/632d9fcb6e7766b37d9837f5 HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Gott till apelsinsaft"
+}
+
+###
+
+# Hämtar alla kategorier
+GET {{baseUrl}}/categories HTTP/1.1
+
+###
+
+# Hämtar alla recept i en viss kategori (Förrätt)
+GET {{baseUrl}}/categories/Förrätt/recipes HTTP/1.1
+
+###
+
+# Söker bland recept i en viss kategori
+GET {{baseUrl}}/categories/Förrätt/recipes?query=brus HTTP/1.1
+
+###
+
+# Lägger till ett omdöme (1-5) för ett recept
+POST {{baseUrl}}/recipes/632da30c6e7766b37d983811/ratings
+Content-Type: application/json
+
+{
+    "rating": 1
+}
+###
+
+# Hämtar alla kommentarer för ett recept
+GET {{baseUrl}}/recipes/632da30c6e7766b37d983811/comments
+
+###
+
+# Lägger till en kommentar för ett recept
+POST {{baseUrl}}/recipes/632da30c6e7766b37d983811/comments
+Content-Type: application/json
+
+{
+    "comment": "För mycket salt!",
+    "name": "Bosse"
+}
+
+###
+
+# Tömmer all data i api:et
+GET {{baseUrl}}/clear HTTP/1.1
+
+###
