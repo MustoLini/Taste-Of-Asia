@@ -1,54 +1,59 @@
 @import './base.css';
-
-#recipeBox{
-  margin-top: 2rem;
-  color: green;
-  text-align: center;
-  margin-left: 38rem;
-  margin-right: 38rem;
-  width: 300px;
-  height: 200px;
-  background-color: lightgray;
-  padding: 1rem;
-  box-sizing: border-box;
-  border: 2px solid gray;
-  border: 2px solid red;
-  box-sizing: border-box;
-  padding: 1rem;
-  text-align: center;
-  color: green;
+/* Reset some default styles for consistency */
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
-#app {
-  max-width: 1280px;
+/* Define styles for the container of your posts */
+#recipeBox {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
+  /* Distribute items evenly on large screens */
+  gap: 10px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+/* Define styles for each individual post */
+.recipe-post {
+  flex: 1; /* Make each post equally occupy the available space */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 5px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+.recipe-post h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  text-align: center;
+}
+
+.recipe-post p {
+  padding: 15px;
+  color: black;
+}
+
+.recipe-post img {
+  max-width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  #recipeBox {
+    flex-direction: column; /* Stack items vertically on small screens */
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
+
