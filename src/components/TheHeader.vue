@@ -33,7 +33,7 @@ img {
 
 a {
     text-decoration: none;
-    color: rgb(168, 145, 74);
+    color: #a8914a;
     font-size: 1rem;
     width: max-content;
 }
@@ -54,7 +54,7 @@ input {
 
 .main {
     padding: 1rem;
-    background-image: linear-gradient(to bottom right, rgb(91, 248, 248), rgba(117, 255, 179, 0.895));
+    background-image: linear-gradient(to bottom right, #1C2F2F, #475f5f);
     box-shadow: 0rem 0.5rem 1rem rgb(221, 221, 221);
 }
 </style>
