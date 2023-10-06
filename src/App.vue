@@ -1,14 +1,14 @@
+
 <template>
-  
   <div class="card-container">
-      <get-data></get-data>
+      <RouterView></RouterView>
   </div>
 </template>
 
 <script>
- import GetData from "@/components/GetData.vue";
+ import {RouterView,RouterLink} from "vue-router";
+
 export default {
-  components: {GetData}
 }
 </script>
 
