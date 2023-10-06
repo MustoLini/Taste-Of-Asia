@@ -1,0 +1,60 @@
+<template>
+    <div class="main">
+        <nav>
+            <RouterLink to="/"><img src="../assets/img/logo/taste-of-asia-logo-300x200.png" alt=""></RouterLink>
+            <div>
+                <input type="text" placeholder="Sök recept...">
+            </div>
+            <div class="categories">
+                <RouterLink to="/">Vietnamesiskt</RouterLink>
+                <RouterLink to="/">Koreanskt</RouterLink>
+                <RouterLink to="/">Japansk</RouterLink>
+            </div>
+        </nav>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+img {
+    width: 90%;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(168, 145, 74);
+    font-size: 1rem;
+    width: max-content;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+    padding: .3rem 1rem;
+
+}
+
+.main {
+    padding: 1rem;
+    background-image: linear-gradient(to bottom right, rgb(91, 248, 248), rgba(117, 255, 179, 0.895));
+    box-shadow: 0rem 0.5rem 1rem rgb(221, 221, 221);
+}
+</style>
