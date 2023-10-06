@@ -7,7 +7,6 @@
         alt="placeholder">
     <p> {{ "Time in minutes: " + post.timeInMins }}</p>
     <p>{{ "Amount of ingredients: " + post.ingredients.length }}</p>
-
       <button @click="goToRecipeDetail">Go to Recipe</button>
 
   </div>
