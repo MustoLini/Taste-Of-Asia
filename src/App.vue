@@ -1,5 +1,6 @@
 
 <template>
+  <TheHeader/>
   <div class="card-container">
       <RouterView></RouterView>
   </div>
@@ -7,8 +8,10 @@
 
 <script>
  import {RouterView,RouterLink} from "vue-router";
+ import TheHeader from "./components/TheHeader.vue";
 
 export default {
+  components: {TheHeader}
 }
 </script>
 
