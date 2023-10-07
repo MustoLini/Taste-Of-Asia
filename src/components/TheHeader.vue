@@ -6,9 +6,9 @@
                 <input type="text" placeholder="Sök recept...">
             </div>
             <div class="categories">
-                <RouterLink to="/">Vietnamesiskt</RouterLink>
-                <RouterLink to="/">Koreanskt</RouterLink>
-                <RouterLink to="/">Japansk</RouterLink>
+                <RouterLink to="/category/vietnamesiskt">Vietnamesiskt</RouterLink>
+                <RouterLink to="/category/koreanskt">Koreanskt</RouterLink>
+                <RouterLink to="/category/japansk">Japansk</RouterLink>
             </div>
         </nav>
     </div>
