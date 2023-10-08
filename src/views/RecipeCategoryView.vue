@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ this.category }}</h1>
+        <h1>{{ `${this.category} (${chosenCategoryPosts.length})`}} </h1>
         <RecipeCard class="test" v-for="post in chosenCategoryPosts" :key="post.id">
             <div class="recipe-post">
                 <img src="../assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg" alt="placeholder">
