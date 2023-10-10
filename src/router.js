@@ -27,6 +27,11 @@ const routes = [
         path: '/category/:id', 
         name: "recipe-category",
         component: RecipeCategoryView,
+    },
+    {
+        path: '/search',
+        name: 'search',
+        component: GetData,
     }
 ];
 

@@ -1,60 +1,70 @@
 <template>
-    <div class="main">
-        <nav>
-            <RouterLink to="/"><img src="../assets/img/logo/taste-of-asia-logo-300x200.png" alt=""></RouterLink>
-            <div>
-                <input type="text" placeholder="Sök recept...">
-            </div>
-            <div class="categories">
-                <RouterLink to="/category/vietnamesiskt">Vietnamesiskt</RouterLink>
-                <RouterLink to="/category/koreanskt">Koreanskt</RouterLink>
-                <RouterLink to="/category/japansk">Japansk</RouterLink>
-            </div>
-        </nav>
-    </div>
+  <div class="main">
+    <nav>
+      <RouterLink to="/"><img src="../assets/img/logo/taste-of-asia-logo-300x200.png" alt=""></RouterLink>
+      <div>
+        <input type="text" placeholder="Sök recept..." v-model="searchQuery" @input="handleSearch">
+
+      </div>
+      <div class="categories">
+        <RouterLink to="/category/vietnamesiskt">Vietnamesiskt</RouterLink>
+        <RouterLink to="/category/koreanskt">Koreanskt</RouterLink>
+        <RouterLink to="/category/japansk">Japansk</RouterLink>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      searchQuery: ""
+    }
+  }, methods: {
+    handleSearch() {
+      this.$emit("search", this.searchQuery);
+    }
+  }
 }
+
 </script>
 
 <style scoped>
 img {
-    width: 90%;
+  width: 90%;
 }
 
 .categories {
-    display: flex;
-    justify-content: space-between;
-    gap: .5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
 }
 
 a {
-    text-decoration: none;
-    color: #a8914a;
-    font-size: 1rem;
-    width: max-content;
+  text-decoration: none;
+  color: #a8914a;
+  font-size: 1rem;
+  width: max-content;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
 }
 
 input {
-    border-radius: 10px;
-    border: none;
-    padding: .3rem 1rem;
+  border-radius: 10px;
+  border: none;
+  padding: .3rem 1rem;
 
 }
 
 .main {
-    padding: 1rem;
-    background-image: linear-gradient(to bottom right, #1C2F2F, #475f5f);
-    box-shadow: 0rem 0.5rem 1rem rgb(221, 221, 221);
+  padding: 1rem;
+  background-image: linear-gradient(to bottom right, #1C2F2F, #475f5f);
+  box-shadow: 0rem 0.5rem 1rem rgb(221, 221, 221);
 }
 </style>
