@@ -3,7 +3,7 @@
     
     <div class="recipe-post">
       <img
-        src="../assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg"
+        :src="post.imageUrl"
         alt="placeholder">
       <h2> {{ post.title }}</h2>
       <!-- Remove this when rating logic is in place -->
