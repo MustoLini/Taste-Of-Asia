@@ -4,6 +4,7 @@ import RecipePost from '@/components/RecipePost.vue';
 import GetData from '@/components/GetData.vue';
 import RecipeDetail from "@/components/RecipeDetail.vue";
 import RecipeCategoryView from './views/RecipeCategoryView.vue'
+import RecipeSearchView from "@/views/RecipeSearchView.vue";
 
 const routes = [
     {
@@ -31,7 +32,7 @@ const routes = [
     {
         path: '/search',
         name: 'search',
-        component: GetData,
+        component: RecipeSearchView,
     }
 ];
 

@@ -3,9 +3,10 @@
     <nav>
       <RouterLink to="/"><img src="../assets/img/logo/taste-of-asia-logo-300x200.png" alt=""></RouterLink>
       <div>
-        <input type="text" placeholder="Sök recept..." v-model="searchQuery" @input="handleSearch">
-
+        <input type="text" placeholder="Sök recept..." v-model="searchQuery" @input="handleSearch"
+               @keydown.enter="filteredPost">
       </div>
+
       <div class="categories">
         <RouterLink to="/category/vietnamesiskt">Vietnamesiskt</RouterLink>
         <RouterLink to="/category/koreanskt">Koreanskt</RouterLink>
@@ -23,7 +24,7 @@ export default {
     }
   }, methods: {
     handleSearch() {
-      this.$emit("search", this.searchQuery);
+      this.$router.push({name: "search", query: {q: this.searchQuery}});
     }
   }
 }
