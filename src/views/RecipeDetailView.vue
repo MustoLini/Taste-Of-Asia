@@ -1,50 +1,105 @@
 <template>
-  <div class="recipe-detail">
-    <h2>{{ recipe.title }}</h2>
-    <p>{{ recipe.description }}</p>
-    <img :src="recipe.imageUrl" alt="Recipe Image"/>
-    <p>{{ "Time in minutes: " + recipe.timeInMins }}</p>
-    <p>{{ "Amount of ingredients: " + recipe.ingredients.length}}</p>
+  <div class="recipe-container">
+    <section class="recipe-detail">
+      <div class="text">
+        <h2>{{ recipe.title }}</h2>
+        <div class="summary">
+          <div class="recipe-info">
+            <i class="material-icons">schedule</i>
+            <p>{{ "Minuter: " + recipe.timeInMins }}</p>
+          </div>
+          <div class="recipe-info">
+            <i class="material-icons">article</i>
+            <p>{{ `Ingredienser: ${recipe.ingredients.length}` }}</p>
+          </div>
+        </div>
+        <p class="description">{{ recipe.description }}</p>
+      </div>
+      <img :src="recipe.imageUrl" alt="Recipe Image" />
+    </section>
+    <section class="recipe-steps">
+      <h3>Steps</h3>
+    </section>
+    <section>
+      <StarRating :id="recipe._id">
+      </StarRating>
+    </section>
   </div>
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import StarRating from '../components/StarRating.vue';
 
-export default defineComponent(
-    {
-      data() {
-        return {
-          recipe: {}
-        };
-      }, async created() {
-        const recipeId = this.$route.params.id;
-        console.log(recipeId);
-        this.getRecipe(recipeId)
+export default {
+  data() {
+    return {
+      recipe: [],
+    };
+  },
+  created() {
+    const recipeId = this.$route.params.id;
+    this.getRecipe(recipeId);
+  },
+  methods: {
+    async getRecipe(id) {
+      const res = await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${id}`);
+      const data = await res.json();
 
-      }, methods: {
-        async  getRecipe(id) {
-          await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${id}`)
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error('Does not work')
-                } else {
-                  return response.json();
-                }
-              })
-              .then((data) => {
-                this.recipe = data;
-              }).catch((error) => {
-            console.error('Error fetching recipe data: ', error)
-          });
-        }
-      }
+      this.recipe = data;
+    },
 
-    }
-)
-
+  },
+  components: { StarRating }
+}
 </script>
 
+
 <style scoped>
+
+
+.recipe-info {
+  display: flex;
+}
+
+.recipe-container {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-detail {
+  margin: 1rem auto;
+  max-width: 40rem;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 50%;
+
+}
+
+.summary {
+  display: flex;
+  padding: .3rem .6rem;
+  background-color: rgba(13, 39, 7, 0.128);
+  justify-content: space-between;
+  font-size: .8rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+}
 
 </style>
