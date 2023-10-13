@@ -6,6 +6,7 @@
                 <img src="../assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg" alt="placeholder">
                 <h2> {{ post.title }}</h2>
                 <!-- Remove this when rating logic is in place -->
+                <!-- test -->
                 <div class="rating">
                     <i class="material-icons">star</i>
                     <i class="material-icons">star</i>
