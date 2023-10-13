@@ -1,6 +1,8 @@
 import './assets/main.css'
-console.log("Running main")
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router'; // Import the router instance
 
-createApp(App).mount('#app')
+createApp(App)
+    .use(router) // Use the router instance
+    .mount('#app');

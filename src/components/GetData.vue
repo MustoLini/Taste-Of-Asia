@@ -1,6 +1,14 @@
 <template>
   <div id="recipeBox">
-      <RecipePost v-for="singlePost in post" :key="singlePost.id" :post="singlePost"></RecipePost >
+    <div v-if="post">
+      <RecipePost v-for="singlePost in post"
+                  :key="singlePost.id"
+                  :post="singlePost"
+      ></RecipePost >
+    </div>
+    <div v-else>
+        Loading..
+    </div>
   </div>
 
 </template>

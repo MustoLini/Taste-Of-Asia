@@ -1,19 +1,18 @@
+
 <template>
-  
-  <div class="card-container">
-      <get-data></get-data>
-  </div>
+  <TheHeader />
+  <RouterView></RouterView>
 </template>
 
 <script>
- import GetData from "@/components/GetData.vue";
+import { RouterView, RouterLink } from "vue-router";
+import TheHeader from "./components/TheHeader.vue";
+
 export default {
-  components: {GetData}
+  components: { TheHeader }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 
