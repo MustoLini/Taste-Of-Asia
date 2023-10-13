@@ -2,7 +2,7 @@
   <div class="recipe-detail">
     <h2>{{ recipe.title }}</h2>
     <p>{{ recipe.description }}</p>
-    <img src="recipe.imageUrl" alt="Recipe Image"/>
+    <img :src="recipe.imageUrl" alt="Recipe Image"/>
     <p>{{ "Time in minutes: " + recipe.timeInMins }}</p>
     <p>{{ "Amount of ingredients: " + recipe.ingredients.length}}</p>
   </div>

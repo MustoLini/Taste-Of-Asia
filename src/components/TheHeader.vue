@@ -3,7 +3,7 @@
         <nav>
             <RouterLink to="/"><img src="../assets/img/logo/taste-of-asia-logo-300x200.png" alt=""></RouterLink>
             <div>
-                <input type="text" placeholder="Sök recept...">
+                <input type="text" placeholder="Sök recept..." v-model="searchInput" @keydown.enter="searchRecipes">
             </div>
             <div class="categories">
                 <RouterLink to="/category/vietnamesiskt">Vietnamesiskt</RouterLink>
@@ -16,6 +16,17 @@
 
 <script>
 export default {
+    data() {
+        return {
+            searchInput: ''
+        }
+    },
+    methods: {
+        async searchRecipes() {
+            this.$router.push(`/search/${this.searchInput}`)
+            this.searchInput = '';
+        }
+    }
 
 }
 </script>

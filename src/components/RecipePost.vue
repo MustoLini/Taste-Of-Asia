@@ -1,18 +1,13 @@
 <template>
   <RecipeCard class="test">
-    
+    <RouterLink :to="`/recipe-detail/${post._id}` ">
     <div class="recipe-post">
       <img
-        src="../assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg"
+        :src="post.imageUrl"
         alt="placeholder">
       <h2> {{ post.title }}</h2>
       <!-- Remove this when rating logic is in place -->
-      <div class="rating">
-        <i class="material-icons">star</i>
-        <i class="material-icons">star</i>
-        <i class="material-icons">star</i>
-        <i class="material-icons">star</i>
-      </div>
+      <StarRating :id="post._id" class="star-rating"/>
       <div class="recipe-summary">
         <div class="recipe-info">
           <i class="material-icons">schedule</i>
@@ -25,7 +20,7 @@
       </div>
       <!-- <button @click="goToRecipeDetail">Go to Recipe</button> -->
     </div>
-
+  </RouterLink>
   </RecipeCard>
 </template>
 
@@ -33,6 +28,8 @@
 
 import { defineComponent } from "vue";
 import RecipeCard from "./RecipeCard.vue";
+import StarRating from "./StarRating.vue";
+import {RouterLink} from 'vue-router';
 
 export default defineComponent({
   data() {
@@ -48,7 +45,8 @@ export default defineComponent({
     },
   },
   components: {
-    RecipeCard
+    RecipeCard,
+    StarRating
   }
 });
 </script>
@@ -76,6 +74,16 @@ h2 {
   font-weight: 500;
   /* margin-bottom: 1rem; */
   padding: 0.3rem 1.2rem;
+}
+
+.star-rating {
+  padding: 0 1rem;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 
