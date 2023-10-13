@@ -3,7 +3,7 @@
         <h1>{{ `${this.category} (${chosenCategoryPosts.length})`}} </h1>
         <RecipeCard class="test" v-for="post in chosenCategoryPosts" :key="post.id">
             <div class="recipe-post">
-                <img src="../assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg" alt="placeholder">
+                <img :src="post.imageUrl" alt="placeholder">
                 <h2> {{ post.title }}</h2>
                 <!-- Remove this when rating logic is in place -->
                 <!-- test -->
