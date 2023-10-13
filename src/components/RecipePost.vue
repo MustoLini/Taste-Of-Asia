@@ -1,6 +1,6 @@
 <template>
   <RecipeCard class="test">
-    
+    <RouterLink :to="`/recipe-detail/${post._id}` ">
     <div class="recipe-post">
       <img
         :src="post.imageUrl"
@@ -20,7 +20,7 @@
       </div>
       <!-- <button @click="goToRecipeDetail">Go to Recipe</button> -->
     </div>
-
+  </RouterLink>
   </RecipeCard>
 </template>
 
@@ -29,6 +29,7 @@
 import { defineComponent } from "vue";
 import RecipeCard from "./RecipeCard.vue";
 import StarRating from "./StarRating.vue";
+import {RouterLink} from 'vue-router';
 
 export default defineComponent({
   data() {
@@ -78,6 +79,11 @@ h2 {
 .star-rating {
   padding: 0 1rem;
 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 

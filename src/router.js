@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import RecipePost from '@/components/RecipePost.vue';
 import GetData from '@/components/GetData.vue';
-import RecipeDetail from "@/components/RecipeDetail.vue";
+import RecipeDetailView from "./views/RecipeDetailView.vue";
 import RecipeCategoryView from './views/RecipeCategoryView.vue';
 import SearchView from './views/SearchView.vue';
 
@@ -21,7 +21,7 @@ const routes = [
     {
         path: '/recipe-detail/:id', // This route should match the URL update
         name: "recipe-detail",
-        component: RecipeDetail,
+        component: RecipeDetailView,
         props: true
     },
     {
