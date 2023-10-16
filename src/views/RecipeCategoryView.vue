@@ -5,14 +5,7 @@
             <div class="recipe-post">
                 <img :src="post.imageUrl" alt="placeholder">
                 <h2> {{ post.title }}</h2>
-                <!-- Remove this when rating logic is in place -->
-                <!-- test -->
-                <div class="rating">
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                </div>
+                <StarRating :id="post._id" class="star-rating"/>
                 <div class="recipe-summary">
                     <div class="recipe-info">
                         <i class="material-icons">schedule</i>
@@ -30,8 +23,9 @@
 
 <script>
 import RecipeCard from "../components/RecipeCard.vue";
+import StarRating from "../components/StarRating.vue";
+
 export default {
-    // inject: ['allPosts'],
     data() {
         return {
             posts: [],
@@ -60,10 +54,12 @@ export default {
         },
         filterPosts(category) {
             this.chosenCategoryPosts = this.posts.filter(post => post.categories[0].toLowerCase() === category)
+            console.log( this.chosenCategoryPosts)
         }
     },
     components: {
-        RecipeCard
+        RecipeCard,
+        StarRating
     }
 }
 </script>
