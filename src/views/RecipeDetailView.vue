@@ -24,16 +24,30 @@
       <StarRating :id="recipe._id">
       </StarRating>
     </section>
+
+    <section>
+      <CommentPost @add-comment="addComment"></CommentPost>
+
+      <div v-for="comment in comments" :key="comment.date">
+        <p>{{comment.author}}</p>
+        <p>{{comment.date}}</p>
+        <p>{{comment.text}}</p>
+      </div>
+
+    </section>
+
+
   </div>
 </template>
 
 <script>
 import StarRating from '../components/StarRating.vue';
-
+import CommentPost from "@/components/commentPost.vue";
 export default {
   data() {
     return {
       recipe: [],
+      comments :[]
     };
   },
   created() {
@@ -47,9 +61,12 @@ export default {
 
       this.recipe = data;
     },
+    addComment(comment){
+      this.comments.push(comment)
+    }
 
   },
-  components: { StarRating }
+  components: { StarRating, CommentPost }
 }
 </script>
 
