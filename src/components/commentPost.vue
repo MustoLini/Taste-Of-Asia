@@ -13,13 +13,14 @@ export default {
     return {
       author: "",
       commentText: "",
+      createdAt:""
     }
   }, props: ['recipeId'],
   created() {
     this.getComments();
   }, methods: {
     async addComment() {
-      console.log("Test 1")
+      console.log("Adding Comments")
       const comment = {
         comment: this.commentText,
         name: this.author,
@@ -42,9 +43,11 @@ export default {
       }
     },
     async getComments(){
+      console.log("Fetching Comments")
       try {
         const res= await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`);
         const data = await res.json();
+        console.log(data)
         this.comments=data;
       }catch (error) {
         console.error("Error fetching comments:", error);
