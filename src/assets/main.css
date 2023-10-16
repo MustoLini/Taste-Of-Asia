@@ -4,32 +4,34 @@ body,
 html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Define styles for the container of your posts */
+/* 
 #recipeBox {
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next row */
-  /* Distribute items evenly on large screens */
+  flex-wrap: wrap; 
+
   gap: 10px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-}
+} */
 
 /* Define styles for each individual post */
-.recipe-post {
-  flex: 1; /* Make each post equally occupy the available space */
+/* .recipe-post {
+  flex: 1; 
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin: 5px;
-}
+} */
 
-.recipe-post h2 {
+/* .recipe-post h2 {
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0;
@@ -46,14 +48,16 @@ html {
   max-width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
+} */
 
 /* Media query for small screens */
+/* 
+
 @media (max-width: 768px) {
   #recipeBox {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column; 
   }
 }
-
+ */
 
 

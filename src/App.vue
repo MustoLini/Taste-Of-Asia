@@ -1,22 +1,18 @@
 
 <template>
-  <TheHeader/>
-  <div class="card-container">
-      <RouterView></RouterView>
-  </div>
+  <TheHeader />
+  <RouterView></RouterView>
 </template>
 
 <script>
- import {RouterView,RouterLink} from "vue-router";
- import TheHeader from "./components/TheHeader.vue";
+import { RouterView, RouterLink } from "vue-router";
+import TheHeader from "./components/TheHeader.vue";
 
 export default {
-  components: {TheHeader}
+  components: { TheHeader }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 
