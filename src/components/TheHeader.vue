@@ -18,20 +18,25 @@
 export default {
     data() {
         return {
-            searchInput: ''
+            searchInput: '',
         }
     },
     methods: {
         async searchRecipes() {
             this.$router.push(`/search/${this.searchInput}`)
             this.searchInput = '';
-        }
+        }    
     }
-
 }
 </script>
 
 <style scoped>
+
+.router-link-active {
+    font-weight: 700;
+    color: #d7cba8;
+}
+
 img {
     width: 90%;
 }
