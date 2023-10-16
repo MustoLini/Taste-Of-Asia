@@ -26,12 +26,12 @@
     </section>
 
     <section>
-      <CommentPost @add-comment="addComment"></CommentPost>
+      <CommentPost :recipe-id="recipe._id" @comment-added="refreshComments"></CommentPost>
 
       <div v-for="comment in comments" :key="comment.date">
         <p>{{comment.author}}</p>
-        <p>{{comment.date}}</p>
         <p>{{comment.text}}</p>
+        <p>{{comment.date}}</p>
       </div>
 
     </section>
@@ -63,7 +63,10 @@ export default {
     },
     addComment(comment){
       this.comments.push(comment)
-    }
+    },
+    refreshComments() {
+      this.getComments();
+    },
 
   },
   components: { StarRating, CommentPost }
