@@ -539,7 +539,7 @@ Content-Type: application/json
 ###
 
 # Hämtar alla kommentarer för ett recept
-GET {{baseUrl}}/recipes/632da30c6e7766b37d983811/comments
+GET {{baseUrl}}/recipes/652ce3c799612c970cb83747/comments
 
 ###
 

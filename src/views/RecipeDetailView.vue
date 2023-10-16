@@ -28,10 +28,10 @@
     <section>
       <CommentPost :recipe-id="recipe._id" @comment-added="refreshComments"></CommentPost>
 
-      <div v-for="comment in comments" :key="comment.date">
-        <p>{{comment.author}}</p>
-        <p>{{comment.text}}</p>
-        <p>{{comment.date}}</p>
+      <div v-for="comment in comments" :key="comment.createdAt">
+        <p>{{comment.name}}</p>
+        <p>{{comment.comment}}</p>
+        <p>{{comment.createdAt}}</p>
       </div>
 
     </section>

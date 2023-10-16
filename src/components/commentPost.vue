@@ -21,13 +21,12 @@ export default {
     async addComment() {
       console.log("Test 1")
       const comment = {
-        text: this.commentText,
-        author: this.author,
-        date: new Date().toDateString()
+        comment: this.commentText,
+        name: this.author,
       };
 
       try {
-        await fetch(`https://your-api.com/recipes/${this.recipeId}/comments`, {
+        await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`, {
           method: 'POST',
           headers: {
             'Content-type': 'application/json'
@@ -36,6 +35,7 @@ export default {
         })
         this.$emit("add-comment", comment);
 
+        this.author="";
         this.commentText = "";
       } catch (error) {
         console.error("Error Adding comment:", error)
@@ -43,7 +43,7 @@ export default {
     },
     async getComments(){
       try {
-        const res= await fetch(`https://your-api.com/recipes/${this.recipeId}/comments`);
+        const res= await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`);
         const data = await res.json();
         this.comments=data;
       }catch (error) {
