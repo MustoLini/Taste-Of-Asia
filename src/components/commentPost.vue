@@ -16,7 +16,7 @@ export default {
     addComment(){
       const comment= {
         text:this.commentText,
-        author:"",
+        author:"Johannes",
         date:new Date().toDateString()
       };
       this.$emit("add-comment",comment);
