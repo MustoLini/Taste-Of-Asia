@@ -1,5 +1,5 @@
 <template>
-  <div id="recipeBox">
+  <div id="recipeBox" class="d-flex justify-center mb-6">
     <div v-if="post">
       <RecipePost v-for="singlePost in post"
                   :key="singlePost.id"
@@ -37,3 +37,11 @@ export default {
   }
 }
 </script>
+<style>
+#recipebox{
+  display: grid;
+grid-template-rows: repeat(auto-fill,minmax(250px,1fr));
+}
+
+
+</style>

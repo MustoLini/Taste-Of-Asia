@@ -5,6 +5,12 @@ html {
   margin: 0;
   padding: 0;
 }
+/*#recipeBox{
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ align-content: space-between;
+}
 
 /* Define styles for the container of your posts */
 /* 
@@ -55,6 +61,7 @@ html {
     flex-direction: column; /* Stack items vertically on small screens */
   }
 }
+
 
 
 
