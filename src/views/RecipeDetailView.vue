@@ -24,12 +24,18 @@
       <StarRating :id="recipe._id">
       </StarRating>
     </section>
+
+    <section>
+      <CommentPost :recipe-id="recipe._id"></CommentPost>
+    </section>
   </div>
 </template>
 
 <script>
 import StarRating from '../components/StarRating.vue';
+
 import Instructions from '../components/Instructions.vue';
+import CommentPost from "@/components/commentPost.vue";
 
 export default {
   data() {
@@ -48,9 +54,18 @@ export default {
 
       this.recipe = data;
     },
+    // addComment(comment){
+    //   console.log("This is all comments",this.comments)
+    //   this.comments.push(comment)
+    // },
+    // refreshComments() {
+    //   this.getComments();
+    // },
 
   },
-  components: { StarRating, Instructions }
+
+  components: { StarRating, Instructions, CommentPost }
+
 }
 </script>
 
