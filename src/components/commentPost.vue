@@ -1,16 +1,19 @@
 <template>
   <div>
     <input type="text" v-model="author" placeholder="Author">
-    <textarea v-model="commentText" placeholder="Write your comment"></textarea>
+    <input v-model="commentText" placeholder="Write your comment">
     <button @click="addComment" :disabled="isSubmitDisabled">Add Comment</button>
     <p v-if="showThankYouMessage" class="thank-you">Thank you for your comment!</p>
   </div>
 
-  <div v-for="comment in comments" :key="comment.createdAt">
-    <p>{{ comment.name }}</p>
-    <p>{{ comment.comment }}</p>
-    <p>{{ comment.createdAt }}</p>
+
+  <div v-for="comment in comments" :key="comment.createdAt" class="comment-box">
+    <p class="name">Name: {{ comment.name }}</p>
+    <p class="comment">Comment: {{ comment.comment }}</p>
+    <p class="time">Time: {{ comment.createdAt }}</p>
   </div>
+
+
 </template>
 
 <script>
@@ -30,25 +33,27 @@ export default {
 
   created() {
     this.getComments();
-  },computed:{
-    isSubmitDisabled(){
-      return !this.author.trim()|| !this.commentText.trim()
+  }, computed: {
+    isSubmitDisabled() {
+      return !this.author.trim() || !this.commentText.trim()
     }
 
   },
 
   methods: {
     async addComment() {
-      if (!this.author||!this.commentText){
-        this.validationError="Both author and comment text are required";
+      if (!this.author || !this.commentText) {
+        this.validationError = "Both author and comment text are required";
         return;
       }
       this.validationError = "";
-   
+
       const comment = {
         comment: this.commentText,
         name: this.author,
       };
+      this.author = "";
+      this.commentText = "";
       try {
         await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`, {
           method: 'POST',
@@ -61,8 +66,7 @@ export default {
         this.showThankYouMessage = true;
         this.getComments();
 
-        this.author = "";
-        this.commentText = "";
+
       } catch (error) {
         console.error("Error Adding comment:", error)
       }
@@ -86,4 +90,19 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+.comment-box {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-box .name,
+.comment-box .comment,
+.comment-box .time {
+  margin: 0.5rem 0;
+}
+</style>
