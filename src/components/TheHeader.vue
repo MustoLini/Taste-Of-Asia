@@ -85,7 +85,6 @@ input {
 
 
 @media (min-width: 768px) {
-  
   input {
     max-width: 30rem;
   }
@@ -96,8 +95,8 @@ input {
     width: 50%;
   }
   a {
-
     font-size: 1.4rem;
+    margin: 0 .5rem
 }
 }
 </style>
