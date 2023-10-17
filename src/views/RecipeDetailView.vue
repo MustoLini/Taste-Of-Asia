@@ -18,7 +18,7 @@
       <img :src="recipe.imageUrl" alt="Recipe Image" />
     </section>
     <section class="recipe-steps">
-      <h3>Steps</h3>
+      <Instructions :instructions="recipe.instructions"></Instructions>
     </section>
     <section>
       <StarRating :id="recipe._id">
@@ -33,7 +33,10 @@
 
 <script>
 import StarRating from '../components/StarRating.vue';
+
+import Instructions from '../components/Instructions.vue';
 import CommentPost from "@/components/commentPost.vue";
+
 export default {
   data() {
     return {
@@ -60,14 +63,14 @@ export default {
     // },
 
   },
-  components: { StarRating, CommentPost }
+
+  components: { StarRating, Instructions, CommentPost }
+
 }
 </script>
 
 
 <style scoped>
-
-
 .recipe-info {
   display: flex;
 }
@@ -112,5 +115,4 @@ img {
   flex-direction: column;
   padding: 1rem 1rem;
 }
-
 </style>
