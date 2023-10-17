@@ -3,7 +3,7 @@
     <input type="text" v-model="author" placeholder="Author">
     <input v-model="commentText" placeholder="Write your comment">
     <button @click="addComment" :disabled="isSubmitDisabled">Add Comment</button>
-    <p v-if="showThankYouMessage" class="thank-you">Thank you for your comment!</p>
+    <p v-if="showThankYouMessage" class="comment-box">Thank you for your comment!</p>
   </div>
 
 
