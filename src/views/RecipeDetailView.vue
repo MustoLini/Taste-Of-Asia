@@ -29,9 +29,9 @@
       <CommentPost :recipe-id="recipe._id" @comment-added="refreshComments"></CommentPost>
 
       <div v-for="comment in comments" :key="comment.createdAt">
-        <p>{{ comment.author }}</p>
-        <p>{{ comment.commentText }}</p>
-        <p>{{ comment.createdAt }}</p>
+        <p>{{ this.comment.author }}</p>
+        <p>{{ this.comment.commentText }}</p>
+        <p>{{ this.comment.createdAt }}</p>
       </div>
     </section>
 
@@ -61,6 +61,7 @@ export default {
       this.recipe = data;
     },
     addComment(comment){
+      console.log("This is all comments",this.comments)
       this.comments.push(comment)
     },
     refreshComments() {
