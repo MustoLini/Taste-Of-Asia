@@ -26,16 +26,8 @@
     </section>
 
     <section>
-      <CommentPost :recipe-id="recipe._id" @comment-added="refreshComments"></CommentPost>
-
-      <div v-for="comment in comments" :key="comment.createdAt">
-        <p>{{ this.comment.author }}</p>
-        <p>{{ this.comment.commentText }}</p>
-        <p>{{ this.comment.createdAt }}</p>
-      </div>
+      <CommentPost :recipe-id="recipe._id"></CommentPost>
     </section>
-
-
   </div>
 </template>
 
@@ -46,7 +38,6 @@ export default {
   data() {
     return {
       recipe: [],
-      comments :[]
     };
   },
   created() {
@@ -60,13 +51,13 @@ export default {
 
       this.recipe = data;
     },
-    addComment(comment){
-      console.log("This is all comments",this.comments)
-      this.comments.push(comment)
-    },
-    refreshComments() {
-      this.getComments();
-    },
+    // addComment(comment){
+    //   console.log("This is all comments",this.comments)
+    //   this.comments.push(comment)
+    // },
+    // refreshComments() {
+    //   this.getComments();
+    // },
 
   },
   components: { StarRating, CommentPost }

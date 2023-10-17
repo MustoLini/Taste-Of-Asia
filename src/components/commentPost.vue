@@ -4,6 +4,12 @@
     <textarea v-model="commentText" placeholder="Write your comment"></textarea>
     <button @click="addComment">Add Comment</button>
   </div>
+
+  <div v-for="comment in comments" :key="comment.createdAt">
+    <p>{{ comment.name }}</p>
+    <p>{{ comment.comment }}</p>
+    <p>{{ comment.createdAt }}</p>
+  </div>
 </template>
 
 <script>
@@ -13,19 +19,24 @@ export default {
     return {
       author: "",
       commentText: "",
-      createdAt:""
+      createdAt: "",
+      comments: [],
     }
-  }, props: ['recipeId'],
+  },
+  props: ['recipeId'],
+
   created() {
     this.getComments();
-  }, methods: {
+  },
+
+  methods: {
     async addComment() {
-      console.log("Adding Comments")
+   
       const comment = {
         comment: this.commentText,
         name: this.author,
       };
-
+      console.log("Adding Comments", comment)
       try {
         await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`, {
           method: 'POST',
@@ -36,20 +47,22 @@ export default {
         })
         this.$emit("add-comment", comment);
 
-        this.author="";
+        this.author = "";
         this.commentText = "";
       } catch (error) {
         console.error("Error Adding comment:", error)
       }
     },
-    async getComments(){
+
+    async getComments() {
       console.log("Fetching Comments")
       try {
-        const res= await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`);
+        const res = await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${this.recipeId}/comments`);
         const data = await res.json();
-        console.log(data)
-        this.comments=data;
-      }catch (error) {
+        // console.log(data)
+        this.comments = data;
+        console.log(this.comments)
+      } catch (error) {
         console.error("Error fetching comments:", error);
       }
     }
@@ -59,6 +72,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
