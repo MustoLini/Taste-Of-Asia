@@ -99,7 +99,6 @@ h2 {
 
 img {
   max-width: 50%;
-
 }
 
 .summary {
