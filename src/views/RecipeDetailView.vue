@@ -12,10 +12,15 @@
             <i class="material-icons">article</i>
             <p>{{ `Ingredienser: ${recipe.ingredients.length}` }}</p>
           </div>
+
         </div>
         <p class="description">{{ recipe.description }}</p>
       </div>
+      
       <img :src="recipe.imageUrl" alt="Recipe Image" />
+    </section>
+    <section class="ingredients-list">
+      <IngredientsList :id="recipe._id"></IngredientsList>
     </section>
     <section class="recipe-steps">
       <Instructions :instructions="recipe.instructions"></Instructions>
@@ -33,6 +38,7 @@
 
 <script>
 import StarRating from '../components/StarRating.vue';
+import IngredientsList from '../components/IngredientsList.vue';
 
 import Instructions from '../components/Instructions.vue';
 import CommentPost from "@/components/commentPost.vue";
@@ -64,7 +70,8 @@ export default {
 
   },
 
-  components: { StarRating, Instructions, CommentPost }
+  components: { StarRating, Instructions, CommentPost, IngredientsList }
+
 
 }
 </script>
@@ -114,4 +121,5 @@ img {
   flex-direction: column;
   padding: 1rem 1rem;
 }
+
 </style>
