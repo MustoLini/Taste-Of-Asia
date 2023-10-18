@@ -23,11 +23,15 @@
       <IngredientsList :id="recipe._id"></IngredientsList>
     </section>
     <section class="recipe-steps">
-      <h3>Steps</h3>
+      <Instructions :instructions="recipe.instructions"></Instructions>
     </section>
     <section>
       <StarRating :id="recipe._id">
       </StarRating>
+    </section>
+
+    <section>
+      <CommentPost :recipe-id="recipe._id"></CommentPost>
     </section>
   </div>
 </template>
@@ -35,6 +39,9 @@
 <script>
 import StarRating from '../components/StarRating.vue';
 import IngredientsList from '../components/IngredientsList.vue';
+
+import Instructions from '../components/Instructions.vue';
+import CommentPost from "@/components/commentPost.vue";
 
 export default {
   data() {
@@ -53,17 +60,24 @@ export default {
 
       this.recipe = data;
     },
+    // addComment(comment){
+    //   console.log("This is all comments",this.comments)
+    //   this.comments.push(comment)
+    // },
+    // refreshComments() {
+    //   this.getComments();
+    // },
 
   },
-  components: { StarRating },
-  components: {IngredientsList}
+
+  components: { StarRating, Instructions, CommentPost, IngredientsList }
+
+
 }
 </script>
 
 
 <style scoped>
-
-
 .recipe-info {
   display: flex;
 }
@@ -92,7 +106,6 @@ h2 {
 
 img {
   max-width: 50%;
-
 }
 
 .summary {
@@ -108,6 +121,5 @@ img {
   flex-direction: column;
   padding: 1rem 1rem;
 }
-
 
 </style>
