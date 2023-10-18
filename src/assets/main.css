@@ -53,11 +53,12 @@ html {
 /* Media query for small screens */
 /* 
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   #recipeBox {
     flex-direction: column; 
   }
 }
  */
+
 
 

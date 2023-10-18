@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Sökresultat</h1>
+    <h1>Sökresultat</h1>
+    <div class="card-container">
         <RecipePost v-for="recipe in recipes" :key="recipe.id" :post="recipe"></RecipePost>
     </div>
 </template>
@@ -26,8 +26,8 @@ export default {
         RecipePost
     },
     watch: {
-        $route(){
-         this.searchRecipes()
+        $route() {
+            this.searchRecipes()
         }
     },
     created() {
@@ -37,7 +37,15 @@ export default {
 </script>
 
 <style scoped>
- h1 {
+h1 {
     text-align: center;
- }
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5rem 20rem;
+    }
+}
 </style>

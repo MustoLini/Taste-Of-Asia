@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <h1>{{ `${this.category} (${chosenCategoryPosts.length})`}} </h1>
-        <RecipeCard class="test" v-for="post in chosenCategoryPosts" :key="post.id">
+    <h1>{{ `${this.category} (${chosenCategoryPosts.length})` }} </h1>
+    <div class="card-container">
+        <RecipeCard v-for="post in chosenCategoryPosts" :key="post.id">
             <div class="recipe-post">
                 <img :src="post.imageUrl" alt="placeholder">
                 <h2> {{ post.title }}</h2>
-                <StarRating :id="post._id" class="star-rating"/>
+                <StarRating :id="post._id" class="star-rating" />
                 <div class="recipe-summary">
                     <div class="recipe-info">
                         <i class="material-icons">schedule</i>
@@ -54,7 +54,7 @@ export default {
         },
         filterPosts(category) {
             this.chosenCategoryPosts = this.posts.filter(post => post.categories[0].toLowerCase() === category)
-            console.log( this.chosenCategoryPosts)
+            console.log(this.chosenCategoryPosts)
         }
     },
     components: {
@@ -95,4 +95,14 @@ h2 {
     font-weight: 500;
     padding: 0.3rem 1.2rem;
 }
+
+@media (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5rem 20rem;
+}
+}
+
+
 </style>

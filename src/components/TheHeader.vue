@@ -73,7 +73,7 @@ input {
     border-radius: 10px;
     border: none;
     padding: .3rem 1rem;
-    width: 100%;
+    width: 60%;
     margin-right: .8rem;
 }
 
@@ -81,5 +81,22 @@ input {
     padding: .3rem .5rem;
     background-image: linear-gradient(to bottom right, #1C2F2F, #475f5f);
     box-shadow: 0rem 0.5rem 1rem rgb(221, 221, 221);
+}
+
+
+@media (min-width: 768px) {
+  input {
+    max-width: 30rem;
+  }
+  .img-search {
+    gap: 5rem
+  }
+  img {
+    width: 50%;
+  }
+  a {
+    font-size: 1.4rem;
+    margin: 0 .5rem
+}
 }
 </style>
