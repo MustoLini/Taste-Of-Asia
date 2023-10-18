@@ -4,6 +4,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Define styles for the container of your posts */
@@ -50,11 +51,14 @@ html {
 } */
 
 /* Media query for small screens */
-@media (max-width: 768px) {
+/* 
+
+@media (min-width: 768px) {
   #recipeBox {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column; 
   }
 }
+ */
 
 
 
