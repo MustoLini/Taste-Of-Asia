@@ -6,7 +6,7 @@
         <div class="summary">
           <div class="recipe-info">
             <i class="material-icons">schedule</i>
-            <p>{{ "Minuter: " + recipe.timeInMins }}</p>
+            <p>{{ 'Minuter: ' + recipe.timeInMins }}</p>
           </div>
           <div class="recipe-info">
             <i class="material-icons">article</i>
@@ -15,14 +15,16 @@
         </div>
         <p class="description">{{ recipe.description }}</p>
       </div>
+
       <img :src="recipe.imageUrl" alt="Recipe Image" />
     </section>
+    <section class="ingredients-list"></section>
     <section class="recipe-steps">
+      <IngredientsList :id="recipe._id"></IngredientsList>
       <Instructions :instructions="recipe.instructions"></Instructions>
     </section>
     <section>
-      <StarRating :id="recipe._id">
-      </StarRating>
+      <StarRating class="star" :id="recipe._id"> </StarRating>
     </section>
 
     <section>
@@ -33,9 +35,10 @@
 
 <script>
 import StarRating from '../components/StarRating.vue';
+import IngredientsList from '../components/IngredientsList.vue';
 
 import Instructions from '../components/Instructions.vue';
-import CommentPost from "@/components/commentPost.vue";
+import CommentPost from '@/components/commentPost.vue';
 
 export default {
   data() {
@@ -49,28 +52,29 @@ export default {
   },
   methods: {
     async getRecipe(id) {
-      const res = await fetch(`https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${id}`);
+      const res = await fetch(
+        `https://jau22-recept-grupp4-xzvarhmra742.reky.se/recipes/${id}`
+      );
       const data = await res.json();
 
       this.recipe = data;
     },
-    // addComment(comment){
-    //   console.log("This is all comments",this.comments)
-    //   this.comments.push(comment)
-    // },
-    // refreshComments() {
-    //   this.getComments();
-    // },
-
   },
 
-  components: { StarRating, Instructions, CommentPost }
-
-}
+  components: { StarRating, Instructions, CommentPost, IngredientsList },
+};
 </script>
 
-
 <style scoped>
+.star {
+  margin: 2rem 0;
+}
+.recipe-steps {
+  display: flex;
+  gap: 1rem;
+  margin: 0 30rem;
+}
+
 .recipe-info {
   display: flex;
 }
@@ -103,10 +107,10 @@ img {
 
 .summary {
   display: flex;
-  padding: .3rem .6rem;
+  padding: 0.3rem 0.6rem;
   background-color: rgba(13, 39, 7, 0.128);
   justify-content: space-between;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .text {
