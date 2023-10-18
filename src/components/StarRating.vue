@@ -40,13 +40,18 @@ export default {
             const data = await res.json();
 
             const roundedAvgRating = +data.avgRating.toFixed(2)
-            console.log(roundedAvgRating)
+            // console.log(roundedAvgRating)
     
             this.avgRating = roundedAvgRating;
         }
     },
     created() {
         this.getRating()
+    },
+    watch: {
+        $route() {
+            this.getRating()
+        }
     },
     components: {
         StarRating

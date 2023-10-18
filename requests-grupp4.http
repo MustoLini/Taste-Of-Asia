@@ -13,6 +13,13 @@ Content-Type: application/json
   "title": "Beef Yakiniku",
   "description": "Beef yakiniku är ett välsmakande asieninspirerat recept där ingredienser som sambal oelek, riven ingefära och soja står för smakerna. Köttet bryns i en het panna innan det blandas med såsen. Till servering finns nudlar, krispiga grönsaker och syrliga limeklyftor där till sist hackad gräslök strösslas över.",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/”beef_yakiniku”.jpg",
   "timeInMins": 30,
   "categories": [
@@ -89,6 +96,13 @@ Content-Type: application/json
   "title": "Sushi California Rolls",
   "description": "En väldigt rolig och annorlunda form av sushi är California rolls. Här har man vänt på steken och riset har vänts utåt i rullen. En trevlig variation! ",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/California-Rolls-redigerad.jpg",
   "timeInMins": 15,
   "categories": [
@@ -160,6 +174,13 @@ Content-Type: application/json
   "title": "Bibimbap med entrecote",
   "description": "Bimbimbap betyder ”rört ris” med många härligt goda smaker och konsistenser i samma skål som blandas. Äts gärna med sked. Eller med pinnar, om man föredrar det. Gott är det oavsett! ",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/Bibimbap-med-entrecote-redigerad.jpg",
   "timeInMins": 40,
   "categories": [
@@ -244,6 +265,13 @@ Content-Type: application/json
   "title": "Chilipicklad gurka",
   "description": "Picklad gurka med chili är en variant av koreansk pressgurka. Det koreanska chilipulvret i originalet har bytts ut mot chiliflakes och paprikapulver. ",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/Chilipicklad-gurka-redigerad.jpg",
   "timeInMins": 30,
   "categories": [
@@ -298,6 +326,13 @@ Content-Type: application/json
   "title": "Vietnamesisk glasnudelsallad med räkor",
   "description": "Glasnudlar gör sig fantastiskt bra i sallader med smakrik dressing. I det här receptet består dressingen av lime, rörsocker, fisksås, risvinäger och chilipeppar. Låt nudlarna ”marinera” lite i dressingen innan servering för en extra smarrig smakupplevelse. ",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/vietnamesisk_glasnudelsallad_med_rakor.jpg",
   "timeInMins": 30,
   "categories": [
@@ -395,6 +430,13 @@ Content-Type: application/json
   "title": "Vietnamesisk vårrullar med räkor",
   "description": "Vietnamesiska vårrullar gör du på blötlagda rispapper, bara att rulla ihop och äta direkt. Servera gärna som mingelmat med olika dippsåser.",
   "ratings": [],
+  "comment": [
+    {
+      "name": "",
+      "comment": "",
+      "date": ""
+    }
+  ],
   "imageUrl": "src/assets/img/Viet-vårullar-m-räkor-redigerad.jpg",
   "timeInMins": 40,
   "categories": [
@@ -497,7 +539,7 @@ Content-Type: application/json
 ###
 
 # Hämtar alla kommentarer för ett recept
-GET {{baseUrl}}/recipes/632da30c6e7766b37d983811/comments
+GET {{baseUrl}}/recipes/652ce3c799612c970cb83747/comments
 
 ###
 
